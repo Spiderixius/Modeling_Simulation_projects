@@ -237,7 +237,7 @@
 					<Width>20</Width>
 					<Height>20</Height>
 						<Expression><![CDATA[((sun_y-earth_y)/distance())*force()/earth_m]]></Expression>
-						<InitialValue><![CDATA[3.16]]></InitialValue>
+						<InitialValue><![CDATA[10]]></InitialValue>
 						<Color/>
 					</Properties>
 				</Variable>
@@ -254,7 +254,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[10]]></Code>
+							<Code><![CDATA[1000]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1505207278421</Id>
@@ -609,7 +609,7 @@
     			<TimePlot>
 					<Id>1505208967616</Id>
 					<Name><![CDATA[chart]]></Name>
-					<X>80</X><Y>390</Y>
+					<X>0</X><Y>370</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -685,7 +685,7 @@
     			<Plot>
 					<Id>1505208971879</Id>
 					<Name><![CDATA[chart1]]></Name>
-					<X>480</X><Y>380</Y>
+					<X>240</X><Y>360</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -761,7 +761,7 @@
     			<TimePlot>
 					<Id>1506407488453</Id>
 					<Name><![CDATA[chart2]]></Name>
-					<X>520</X><Y>130</Y>
+					<X>510</X><Y>370</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -840,9 +840,9 @@
 	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
 	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
 	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
-	<FixedTimeStep>0.001</FixedTimeStep>
+	<FixedTimeStep>1.0E-7</FixedTimeStep>
 	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
-	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<TimeAccuracy>1.0E-9</TimeAccuracy>
 	<Frame>
 		<Width>1000</Width>
 		<Height>600</Height>
