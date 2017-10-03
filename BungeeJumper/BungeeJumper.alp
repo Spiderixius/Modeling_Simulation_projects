@@ -99,57 +99,52 @@
 			<ConnectionsId>1506416057575</ConnectionsId>
 			<Variables>
 				<Variable Class="AuxVariable">
-					<Id>1506416615714</Id>
+					<Id>1507005652180</Id>
 					<Name><![CDATA[F]]></Name>
-					<X>200</X><Y>100</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
+					<X>230</X><Y>100</Y>
+					<Label><X>40</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[
-(y < l) ? 0 : F_Spring + F_Damping
-]]></Formula>
-						<Value><![CDATA[0]]></Value>
+						<Formula><![CDATA[(y < l) ? 0 : F_Spring + F_Damping]]></Formula>
 						<Color/>
 					</Properties>
 
 				</Variable>
 				<Variable Class="AuxVariable">
-					<Id>1506416628752</Id>
+					<Id>1507005652182</Id>
 					<Name><![CDATA[F_Spring]]></Name>
-					<X>280</X><Y>50</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
+					<X>320</X><Y>50</Y>
+					<Label><X>10</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[-k *(y-1)]]></Formula>
-						<Value><![CDATA[0]]></Value>
+						<Formula><![CDATA[- k * (y - l)]]></Formula>
 						<Color/>
 					</Properties>
 
 				</Variable>
 				<Variable Class="AuxVariable">
-					<Id>1506416998473</Id>
+					<Id>1507005652184</Id>
 					<Name><![CDATA[F_Damping]]></Name>
-					<X>280</X><Y>150</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
+					<X>320</X><Y>160</Y>
+					<Label><X>10</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[-max(D*v,0)]]></Formula>
-						<Value><![CDATA[0]]></Value>
+						<Formula><![CDATA[- max( D * v, 0)]]></Formula>
 						<Color/>
 					</Properties>
 
 				</Variable>
 				<Variable Class="StockVariable">
-					<Id>1506416598450</Id>
+					<Id>1507005652186</Id>
 					<Name><![CDATA[y]]></Name>
-					<X>50</X><Y>100</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
+					<X>70</X><Y>110</Y>
+					<Label><X>20</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -163,10 +158,10 @@
 					</Properties>
 				</Variable>
 				<Variable Class="StockVariable">
-					<Id>1506416668318</Id>
+					<Id>1507005652188</Id>
 					<Name><![CDATA[v]]></Name>
-					<X>110</X><Y>190</Y>
-					<Label><X>0</X><Y>-20</Y></Label>
+					<X>190</X><Y>260</Y>
+					<Label><X>-20</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -174,15 +169,14 @@
 					<EquationStyle>custom</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<Expression><![CDATA[g+F/m]]></Expression>
-						<InitialValue><![CDATA[0]]></InitialValue>
+						<Expression><![CDATA[g + F / m]]></Expression>
 						<Color/>
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1506416682042</Id>
+					<Id>1507005652166</Id>
 					<Name><![CDATA[k]]></Name>
-					<X>450</X><Y>50</Y>
+					<X>490</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -195,7 +189,7 @@
 							<Code><![CDATA[50]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1506416682040</Id>
+							<Id>1507005652164</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -204,9 +198,9 @@
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1506416690649</Id>
+					<Id>1507005652169</Id>
 					<Name><![CDATA[l]]></Name>
-					<X>450</X><Y>100</Y>
+					<X>490</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -219,7 +213,7 @@
 							<Code><![CDATA[20]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1506416690647</Id>
+							<Id>1507005652167</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -228,9 +222,9 @@
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1506416699031</Id>
+					<Id>1507005652172</Id>
 					<Name><![CDATA[D]]></Name>
-					<X>450</X><Y>150</Y>
+					<X>490</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -243,7 +237,7 @@
 							<Code><![CDATA[10]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1506416699029</Id>
+							<Id>1507005652170</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -252,9 +246,9 @@
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1506416706997</Id>
+					<Id>1507005652175</Id>
 					<Name><![CDATA[m]]></Name>
-					<X>450</X><Y>200</Y>
+					<X>490</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -267,7 +261,7 @@
 							<Code><![CDATA[60]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1506416706995</Id>
+							<Id>1507005652173</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -276,9 +270,9 @@
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1506416713055</Id>
+					<Id>1507005652178</Id>
 					<Name><![CDATA[g]]></Name>
-					<X>450</X><Y>250</Y>
+					<X>490</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -291,7 +285,7 @@
 							<Code><![CDATA[9.81]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1506416713053</Id>
+							<Id>1507005652176</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -301,103 +295,13 @@
 				</Variable>
 			</Variables>
 			<Dependences>
-				<Link SourceId="1506416668318" TargetId="1506416598450" Polarity="null">
-					<Height>20.0</Height>
+				<Link SourceId="1507005652184" TargetId="1507005652180" Polarity="null">
+					<Height>10.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-60</X><Y>-90</Y></Direction>
-					<Id>1506416836909</Id>
-					<Name><![CDATA[v - y]]></Name>
-					<X>110</X><Y>190</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1506416615714" TargetId="1506416668318" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-90</X><Y>90</Y></Direction>
-					<Id>1506417183387</Id>
-					<Name><![CDATA[F - v]]></Name>
-					<X>200</X><Y>100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1506416706997" TargetId="1506416668318" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-340</X><Y>-10</Y></Direction>
-					<Id>1506417183388</Id>
-					<Name><![CDATA[m - v]]></Name>
-					<X>450</X><Y>200</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1506416713055" TargetId="1506416668318" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-340</X><Y>-60</Y></Direction>
-					<Id>1506417183389</Id>
-					<Name><![CDATA[g - v]]></Name>
-					<X>450</X><Y>250</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1506416598450" TargetId="1506416615714" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>150</X><Y>0</Y></Direction>
-					<Id>1506417237201</Id>
-					<Name><![CDATA[y - F]]></Name>
-					<X>50</X><Y>100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1506416628752" TargetId="1506416615714" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-80</X><Y>50</Y></Direction>
-					<Id>1506417237202</Id>
-					<Name><![CDATA[F_Spring - F]]></Name>
-					<X>280</X><Y>50</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1506416998473" TargetId="1506416615714" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-80</X><Y>-50</Y></Direction>
-					<Id>1506417237203</Id>
+					<Direction><X>-90</X><Y>-60</Y></Direction>
+					<Id>1507005652139</Id>
 					<Name><![CDATA[F_Damping - F]]></Name>
-					<X>280</X><Y>150</Y>
+					<X>320</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -406,13 +310,13 @@
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1506416699031" TargetId="1506416998473" Polarity="null">
-					<Height>20.0</Height>
+				<Link SourceId="1507005652182" TargetId="1507005652180" Polarity="null">
+					<Height>10.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-170</X><Y>0</Y></Direction>
-					<Id>1506417265963</Id>
-					<Name><![CDATA[D - F_Damping]]></Name>
-					<X>450</X><Y>150</Y>
+					<Direction><X>-90</X><Y>50</Y></Direction>
+					<Id>1507005652141</Id>
+					<Name><![CDATA[F_Spring - F]]></Name>
+					<X>320</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -421,28 +325,13 @@
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1506416668318" TargetId="1506416998473" Polarity="null">
-					<Height>20.0</Height>
+				<Link SourceId="1507005652186" TargetId="1507005652182" Polarity="null">
+					<Height>10.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>170</X><Y>-40</Y></Direction>
-					<Id>1506417265964</Id>
-					<Name><![CDATA[v - F_Damping]]></Name>
-					<X>110</X><Y>190</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1506416598450" TargetId="1506416628752" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>230</X><Y>-50</Y></Direction>
-					<Id>1506417290975</Id>
+					<Direction><X>250</X><Y>-60</Y></Direction>
+					<Id>1507005652143</Id>
 					<Name><![CDATA[y - F_Spring]]></Name>
-					<X>50</X><Y>100</Y>
+					<X>70</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -451,13 +340,88 @@
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1506416682042" TargetId="1506416628752" Polarity="null">
-					<Height>20.0</Height>
+				<Link SourceId="1507005652169" TargetId="1507005652182" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-170</X><Y>-60</Y></Direction>
+					<Id>1507005652145</Id>
+					<Name><![CDATA[l - F_Spring]]></Name>
+					<X>490</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652188" TargetId="1507005652186" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-120</X><Y>-150</Y></Direction>
+					<Id>1507005652147</Id>
+					<Name><![CDATA[v - y]]></Name>
+					<X>190</X><Y>260</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652188" TargetId="1507005652184" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>130</X><Y>-100</Y></Direction>
+					<Id>1507005652149</Id>
+					<Name><![CDATA[v - F_Damping]]></Name>
+					<X>190</X><Y>260</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652169" TargetId="1507005652180" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-260</X><Y>-10</Y></Direction>
+					<Id>1507005652151</Id>
+					<Name><![CDATA[l - F]]></Name>
+					<X>490</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652166" TargetId="1507005652182" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-170</X><Y>-10</Y></Direction>
+					<Id>1507005652153</Id>
+					<Name><![CDATA[k - F_Spring]]></Name>
+					<X>490</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652172" TargetId="1507005652184" Polarity="null">
+					<Height>10.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
 					<Direction><X>-170</X><Y>0</Y></Direction>
-					<Id>1506417290976</Id>
-					<Name><![CDATA[k - F_Spring]]></Name>
-					<X>450</X><Y>50</Y>
+					<Id>1507005652155</Id>
+					<Name><![CDATA[D - F_Damping]]></Name>
+					<X>490</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -466,13 +430,58 @@
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1506416690649" TargetId="1506416615714" Polarity="null">
-					<Height>20.0</Height>
+				<Link SourceId="1507005652178" TargetId="1507005652188" Polarity="null">
+					<Height>10.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-250</X><Y>0</Y></Direction>
-					<Id>1506417336876</Id>
-					<Name><![CDATA[l - F]]></Name>
-					<X>450</X><Y>100</Y>
+					<Direction><X>-300</X><Y>0</Y></Direction>
+					<Id>1507005652157</Id>
+					<Name><![CDATA[g - v]]></Name>
+					<X>490</X><Y>260</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652186" TargetId="1507005652180" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>160</X><Y>-10</Y></Direction>
+					<Id>1507005652159</Id>
+					<Name><![CDATA[y - F]]></Name>
+					<X>70</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652180" TargetId="1507005652188" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-40</X><Y>160</Y></Direction>
+					<Id>1507005652161</Id>
+					<Name><![CDATA[F - v]]></Name>
+					<X>230</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1507005652175" TargetId="1507005652188" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-300</X><Y>50</Y></Direction>
+					<Id>1507005652163</Id>
+					<Name><![CDATA[m - v]]></Name>
+					<X>490</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -505,11 +514,344 @@
 			</AgentLinks>
 
 
+			<Shapes>
+				<Group>
+					<Id>1507005925004</Id>
+					<Name><![CDATA[anna]]></Name>
+					<X>770</X><Y>140</Y>
+					<Label><X>-47.812</X><Y>56.481</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<YCode><![CDATA[120+y*10
+]]></YCode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>180.0</Rotation>
+
+			<Shapes>
+				<Curve ControlPoints="true">
+					<Id>1507005925006</Id>
+					<Name><![CDATA[_ps6]]></Name>
+					<X>-2.813</X><Y>22.592</Y>
+					<Label><X>-20</X><Y>40</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-1722998</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-1722998</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>-5.648</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>-5.648</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>-5.648</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-5.648</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-5.648</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-5.648</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+				<Curve ControlPoints="true">
+					<Id>1507005925008</Id>
+					<Name><![CDATA[_ps7]]></Name>
+					<X>-2.813</X><Y>-11.297</Y>
+					<Label><X>-20</X><Y>40</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12156236</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-5383962</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-5.624</X><Y>8.472</Y><Z>0</Z></Point>
+					   <Point><X>-5.624</X><Y>8.472</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>11.297</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>16.944</Y><Z>0</Z></Point>
+					   <Point><X>-5.624</X><Y>25.417</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>28.241</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>28.241</Y><Z>0</Z></Point>
+					   <Point><X>11.251</X><Y>25.417</Y><Z>0</Z></Point>
+					   <Point><X>8.438</X><Y>16.944</Y><Z>0</Z></Point>
+					   <Point><X>8.438</X><Y>11.297</Y><Z>0</Z></Point>
+					   <Point><X>11.251</X><Y>8.472</Y><Z>0</Z></Point>
+					   <Point><X>11.251</X><Y>8.472</Y><Z>0</Z></Point>
+					   <Point><X>8.438</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+				<Line>
+					<Id>1507005925010</Id>
+					<Name><![CDATA[_ps8]]></Name>
+					<X>-8.438</X><Y>-2.825</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12156236</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>5</Dx>
+					<Dy>8</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1507005925012</Id>
+					<Name><![CDATA[_ps9]]></Name>
+					<X>8.437</X><Y>-2.825</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12156236</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>-7</Dx>
+					<Dy>8</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Curve ControlPoints="true">
+					<Id>1507005925014</Id>
+					<Name><![CDATA[_ps10]]></Name>
+					<X>-5.624</X><Y>25.417</Y>
+					<Label><X>-20</X><Y>40</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12156236</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-12156236</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>11.251</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>11.251</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>11.251</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>11.251</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+				<Curve ControlPoints="true">
+					<Id>1507005925016</Id>
+					<Name><![CDATA[_ps11]]></Name>
+					<X>0</X><Y>-11.297</Y>
+					<Label><X>-20</X><Y>40</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-1722998</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>8.438</X><Y>-11.297</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-11.297</Y><Z>0</Z></Point>
+					   <Point><X>-8.437</X><Y>-11.297</Y><Z>0</Z></Point>
+					   <Point><X>-5.624</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+				<Curve ControlPoints="true">
+					<Id>1507005925018</Id>
+					<Name><![CDATA[_ps12]]></Name>
+					<X>5.624</X><Y>-16.944</Y>
+					<Label><X>-20</X><Y>40</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-8430294</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-8.472</Y><Z>0</Z></Point>
+					   <Point><X>-11.251</X><Y>-8.472</Y><Z>0</Z></Point>
+					   <Point><X>-11.251</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-11.251</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>-8.437</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>-8.437</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>-5.624</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>-5.624</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>-2.825</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>2.825</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+				<Curve ControlPoints="true">
+					<Id>1507005925020</Id>
+					<Name><![CDATA[_ps13]]></Name>
+					<X>0</X><Y>-25.417</Y>
+					<Label><X>-20</X><Y>40</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12156236</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-5185306</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-5.624</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>-2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>2.813</X><Y>2.825</Y><Z>0</Z></Point>
+					   <Point><X>5.624</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+			</Shapes>
+
+				</Group>
+				<Line>
+					<Id>1507006127952</Id>
+					<Name><![CDATA[line]]></Name>
+					<X>770</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineColorCode><![CDATA[(y < l) ? red : green
+
+
+]]></LineColorCode>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>0</Dx>
+					<Dy>20</Dy>
+					<DyCode><![CDATA[y*10]]></DyCode>
+					<Dz>0</Dz>
+				</Line>
+			</Shapes>
 			<Charts>
     			<TimePlot>
 					<Id>1506417368362</Id>
 					<Name><![CDATA[plot1]]></Name>
-					<X>30</X><Y>320</Y>
+					<X>510</X><Y>310</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -574,7 +916,7 @@
     			<TimePlot>
 					<Id>1506417634173</Id>
 					<Name><![CDATA[plot]]></Name>
-					<X>260</X><Y>320</Y>
+					<X>0</X><Y>300</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -635,7 +977,7 @@
 					<DatasetExpression>  
 						<Title><![CDATA[Damping Force]]></Title>
 					<Expression><![CDATA[my_dataset1]]></Expression>
-					<Color>-16777216</Color>
+					<Color>-16776961</Color>
 					<Expression2><![CDATA[F_Damping]]></Expression2>
 					<Expression2Flag>true</Expression2Flag>
 						<PointStyle>NONE</PointStyle>
