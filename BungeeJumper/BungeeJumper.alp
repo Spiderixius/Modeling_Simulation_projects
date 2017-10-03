@@ -518,13 +518,13 @@
 				<Group>
 					<Id>1507005925004</Id>
 					<Name><![CDATA[anna]]></Name>
-					<X>770</X><Y>140</Y>
+					<X>770</X><Y>90</Y>
 					<Label><X>-47.812</X><Y>56.481</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<YCode><![CDATA[120+y*10
+					<YCode><![CDATA[70+y*10
 ]]></YCode>
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -819,7 +819,7 @@
 				<Line>
 					<Id>1507006127952</Id>
 					<Name><![CDATA[line]]></Name>
-					<X>770</X><Y>100</Y>
+					<X>770</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -843,7 +843,8 @@
 					<EndArrowStyle>0</EndArrowStyle>
 					<Dx>0</Dx>
 					<Dy>20</Dy>
-					<DyCode><![CDATA[y*10]]></DyCode>
+					<DyCode><![CDATA[y*10
+]]></DyCode>
 					<Dz>0</Dz>
 				</Line>
 			</Shapes>
@@ -864,7 +865,7 @@
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[0.01]]></Code>
+						<Code><![CDATA[0.001]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</RecurrenceCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -887,7 +888,7 @@
 						<Size>30</Size>
 					</Legend>
 					<Labels>
-						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<HorLabelsPosition>NONE</HorLabelsPosition>
 						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
 						<TextColor>-12566464</TextColor>
 					</Labels>
@@ -929,7 +930,7 @@
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[0.01]]></Code>
+						<Code><![CDATA[0.001]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</RecurrenceCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
