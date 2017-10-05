@@ -139,7 +139,8 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1507023654245" TargetId="1507023690375" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[a*Stomach]]></Formula>
+						<Formula><![CDATA[a*Stomach
+]]></Formula>
 						<Color>-8388480</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>

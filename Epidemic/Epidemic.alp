@@ -188,7 +188,7 @@ infectionRisk*suspectible*infected/populationSize*encounterRate]]></Formula>
 						<ValveIndex>1</ValveIndex>
 						<Points>
 							<Point><X>0</X><Y>0</Y></Point>
-							<Point><X>110</X><Y>0</Y></Point>
+							<Point><X>90</X><Y>0</Y></Point>
 							<Point><X>210</X><Y>0</Y></Point>
 						</Points>
 					</Properties>

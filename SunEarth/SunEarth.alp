@@ -101,6 +101,7 @@
 				<Variable Class="StockVariable">
 					<Id>1505207169428</Id>
 					<Name><![CDATA[sun_x]]></Name>
+					<Description><![CDATA[Looking how sun_x is changing with respect to delta time. sun_u is the x-axis of the suns midpoint.]]></Description>
 					<X>110</X><Y>60</Y>
 					<Label><X>0</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -119,6 +120,7 @@
 				<Variable Class="StockVariable">
 					<Id>1505207194177</Id>
 					<Name><![CDATA[sun_y]]></Name>
+					<Description><![CDATA[Looking how sun_y is changing with respect to delta time. sun_u is the y-axis of the suns midpoint.]]></Description>
 					<X>110</X><Y>110</Y>
 					<Label><X>0</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -166,7 +168,9 @@
 					<EquationStyle>custom</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<Expression><![CDATA[((earth_y-sun_y)/distance())*force()/sun_m]]></Expression>
+						<Expression><![CDATA[((earth_y-sun_y)/distance())*force()/sun_m
+
+]]></Expression>
 						<InitialValue><![CDATA[0]]></InitialValue>
 						<Color/>
 					</Properties>
@@ -219,7 +223,9 @@
 					<EquationStyle>custom</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<Expression><![CDATA[((sun_x-earth_x)/distance()) * force() / earth_m]]></Expression>
+						<Expression><![CDATA[((sun_x-earth_x)/distance()) * force() / earth_m
+
+]]></Expression>
 						<InitialValue><![CDATA[0]]></InitialValue>
 						<Color/>
 					</Properties>
@@ -236,7 +242,9 @@
 					<EquationStyle>custom</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<Expression><![CDATA[((sun_y-earth_y)/distance())*force()/earth_m]]></Expression>
+						<Expression><![CDATA[((sun_y-earth_y)/distance())*force()/earth_m
+
+]]></Expression>
 						<InitialValue><![CDATA[10]]></InitialValue>
 						<Color/>
 					</Properties>
@@ -609,7 +617,7 @@
     			<TimePlot>
 					<Id>1505208967616</Id>
 					<Name><![CDATA[chart]]></Name>
-					<X>0</X><Y>370</Y>
+					<X>480</X><Y>230</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -685,7 +693,7 @@
     			<Plot>
 					<Id>1505208971879</Id>
 					<Name><![CDATA[chart1]]></Name>
-					<X>240</X><Y>360</Y>
+					<X>10</X><Y>320</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -702,15 +710,15 @@
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
-					<Width>260</Width>
-					<Height>210</Height>
+					<Width>360</Width>
+					<Height>280</Height>
 					<BackgroundColor/>
 					<BorderColor/>
 					<ChartArea>
 						<XOffset>50</XOffset>
 						<YOffset>30</YOffset>
-						<Width>180</Width>
-						<Height>120</Height>
+						<Width>280</Width>
+						<Height>190</Height>
 						<BackgroundColor>-1</BackgroundColor>
 						<BorderColor>-16777216</BorderColor>
 						<GridColor>-12566464</GridColor>
@@ -761,7 +769,7 @@
     			<TimePlot>
 					<Id>1506407488453</Id>
 					<Name><![CDATA[chart2]]></Name>
-					<X>510</X><Y>370</Y>
+					<X>460</X><Y>10</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
