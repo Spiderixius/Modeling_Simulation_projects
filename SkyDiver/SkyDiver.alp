@@ -8,6 +8,7 @@
 <Model>
 	<Id>1505205442965</Id>
 	<Name><![CDATA[SkyDiver]]></Name>
+	<Description><![CDATA[The graph shows how a skydiver reaches the max velocity after a certain time.]]></Description>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[skydiver]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Second]]></ModelTimeUnit>
@@ -101,6 +102,10 @@
 				<Variable Class="StockVariable">
 					<Id>1505205710671</Id>
 					<Name><![CDATA[velocity]]></Name>
+					<Description><![CDATA[
+dv/dt = a - b * v*v
+
+The wind pushes up and the gravity pulls down, therefore we minus the wind from the gravity. ]]></Description>
 					<X>260</X><Y>150</Y>
 					<Label><X>0</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -110,7 +115,10 @@
 					<EquationStyle>custom</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<Expression><![CDATA[gravity - windResistance*velocity*velocity]]></Expression>
+						<Expression><![CDATA[gravity - windResistance*velocity*velocity
+
+
+]]></Expression>
 						<InitialValue><![CDATA[0]]></InitialValue>
 						<Color/>
 					</Properties>
@@ -128,7 +136,8 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[9.81]]></Code>
+							<Code><![CDATA[9.81
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1505205603372</Id>
