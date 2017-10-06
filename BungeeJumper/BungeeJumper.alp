@@ -107,7 +107,10 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[(y < l) ? 0 : F_Spring + F_Damping]]></Formula>
+						<Formula><![CDATA[(y < l) ? 0 : F_Spring + F_Damping
+
+
+]]></Formula>
 						<Color/>
 					</Properties>
 
