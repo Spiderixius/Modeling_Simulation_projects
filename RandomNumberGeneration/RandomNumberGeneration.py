@@ -2,11 +2,15 @@ import random as rnd
 import numpy as np
 from itertools import islice
 
+###########################################################################################################
+### Source: https://tonypoer.io/2016/03/23/experimenting-with-linear-congruential-generators-in-python/ ###
+###########################################################################################################
 def main():
+    num_observations = 100
     print("Random Number Generation using LCG")
-    generate_lcg(100)
-    generate_lcg_randu(100)
-    run_tests()
+    generate_lcg(num_observations)
+    generate_lcg_randu(num_observations)
+    run_tests(num_observations)
 
 
 ################################
@@ -80,7 +84,10 @@ def generate_lcg_randu(num_iterations):
 #######################
 ### Statistic Tests ###
 #######################
-
+# Contains:           ###################
+#          - kolmogorov_smirnov_test    #
+#          - runs_test_for_independence #
+#########################################
 def kolmogorov_smirnov_test(data_set, confidence_level, num_samples):
     """
     Using smirnov to test the uniform distribution of the random numbers
@@ -162,20 +169,84 @@ def get_d_minus_value_for_KS_TEST( data_set, num_samples ):
     # coming out of this loop, D+ = highest D+ value
     return d_minus_max
 
-def run_tests():
-    input_file = "lgc_output.txt"
-    test_name = "LINEAR CONGRUENTIAL GENERATOR"
-    print("---------KS_TEST-----------")
-    first_100_values = collect_first_100_samples_in_data_set(input_file)
-    first_100_values.sort()
-    ks_result = kolmogorov_smirnov_test(first_100_values,1,100)
-    ks_significance_test(ks_result,100, 0.1)
-    ks_significance_test(ks_result,100, 0.05)
-    ks_significance_test(ks_result,100, 0.01)
-    print ("Kolmogorov-Smirnov Test Result for D-Value: " + str(ks_result))
-    print ("")
+def runs_test_for_independence( data_file, num_samples ):
+    """
+    Perform a runs test for independence for a set of random numbers
+    :param data_set: A data set with 10,000 samples - should be a list, with all numbers floats
+    :param num_samples: The number of samples to test
+    :return: z-test statistic for our data set
+    """
+    # Note, every sequence begins and ends with "NO EVENT"
+    # Run = Succession of similar events, followed by a different event
+    # Run Length = Number of events that occur in the run
+    # Number of runs = number of "runs" total
+    # Two concerns: Num runs, length of runs
+    # We're looking for:  Runs of larger and smaller numbers (increasing or decreasing)
+    runLengths = { }       # The size of each run, in order
+    numRuns = 0            # The number of runs overall
+    runDirection = "none"  # We'll use "none", "up", and "down" to keep track
+
+    with open( data_file, "r" ) as f:
+        data_points = f.readlines()
 
 
+   # for value in data_points:
+    for value in range(0, (len(data_points)-1) ):
+
+        # DEBUG
+        thisValue = float(data_points[value])
+        nextValue = float(data_points[value+1])
+        # print "data_points[value] ::"+ str(thisValue)
+        # print "dat_points[value+1] ::"+ str(nextValue)
+
+        # If no change in direction we'll ignore
+        if thisValue == nextValue:
+            numRuns = numRuns             # numRums overall, doesn't change
+            runDirection = runDirection   # runDirection doesn't change
+
+        # Check if we have a NEW run, going UP
+        elif thisValue < nextValue and runDirection != "up":
+            numRuns = numRuns + 1         # We have a NEW run
+            runDirection = "up"           # We have a NEW run direction
+            runLengths[numRuns] = 1       # We have a NEW key in our dictionary, with value=1
+
+        # Check if we have a CONTINUING run, going UP
+        elif thisValue < nextValue and runDirection == "up":
+            runLengths[numRuns] += 1      # increment the run length in our dictionary for current run
+                                          # NumRuns doesn't change
+                                          # runDirection doesn't change
+
+        # Check if we have NEW run, going DOWN
+        elif thisValue > nextValue and runDirection != "down":
+            numRuns = numRuns + 1          # We have a NEW run
+            runDirection = "down"          # We have a NEW run direction
+            runLengths[numRuns] = 1        # We have a NEW key in our dictionary, with value=1
+
+        # Check if we have a CONTINUING run, going DOWN
+        elif thisValue > nextValue and runDirection == "down":
+            runLengths[numRuns] += 1      # increment the run length in our dictionary for current run
+                                          # NumRuns doesn't change
+                                          # runDirection doesn't change
+
+    # Leaving this loop, we should have a dictionary with our run numbers mapped to their lengths
+    # We should also have a the number of runs
+
+    # Now, calculate mean:  Mean = (2N-1)/3
+    mean =  ( (2*num_samples - 1) / 3 )
+
+    # And variance:  Variance = (16(N) - 29) / 90
+    variance = ( ( 16*num_samples - 29) / 90 )
+
+    # And we can use the mean & variance to calculate the Z-Test statistic
+    z_statistic = ( (numRuns - mean) / np.sqrt(variance) )
+
+    print ("Number of runs: " + str(numRuns))
+
+    return z_statistic
+
+######################
+### Helper Methods ###
+######################
 def collect_first_100_samples_in_data_set( data_file ):
     """
     Takes a data file, with real number data points between [0,1) reads the first 100 values,
@@ -197,6 +268,9 @@ def collect_first_100_samples_in_data_set( data_file ):
     return first_100_vals_as_FLOATS
 
 
+##############################
+##### Significance Tests #####
+##############################
 def ks_significance_test( d_statistic, num_observations, alpha_level ):
     """
     Perform Significance test for Kolmogorov-Smirnov
@@ -208,7 +282,6 @@ def ks_significance_test( d_statistic, num_observations, alpha_level ):
     """
     result = "FAIL TO REJECT null hypothesis"
     critical_value = 0
-
 
     if alpha_level == 0.1:
         critical_value = 1.22/np.sqrt(num_observations)
@@ -228,6 +301,90 @@ def ks_significance_test( d_statistic, num_observations, alpha_level ):
     print ("............................")
 
     return result
+
+def z_score_lookup( z_score, significance_level, two_sided=True):
+    """
+    Performs a two-sided z-score lookup, for 0.8, 0.9, or 0.95 level of significance
+    :param z_score: Z score to test
+    :param significance_level: Significance level
+    :return: String detailing our result
+    """
+
+    result = "FAIL TO REJECT null hypothesis"
+    critical_value = 0.0
+    confidence_80 = 1.282
+    confidence_90 = 1.645
+    confidence_95 = 1.96
+    confidence_99 = 2.576
+
+    # Assign confidence interval z-scores to our crit value
+    if significance_level == 0.8:
+        critical_value = confidence_80
+    elif significance_level == 0.9:
+        critical_value = confidence_90
+    elif significance_level == 0.95:
+        critical_value = confidence_95
+    else:
+        print ("Invalid significance level for z-lookup. Must be: 0.8, 0.9, or 0.95")
+
+    # Need to adjust intervals if the test is one sided
+    if two_sided == False:
+        if critical_value == confidence_80:
+            critical_value = 0.8416
+        elif critical_value == confidence_90:
+            critical_value = 1.282
+        elif critical_value == confidence_95:
+            critical_value = 1.645
+
+    neg_crit_value = critical_value * (-1.0)
+
+    #if z_score < 0:
+     #  z_score = z_score * (-1)
+
+    if ( two_sided and ( z_score <= neg_crit_value) or (critical_value <= z_score ) ):
+        result = "REJECT null hypothesis"
+
+    if ( not two_sided and z_score >= critical_value or z_score <= neg_crit_value):
+        result = "REJECT null hypothesis"
+
+    print ("Z score is: " + str(z_score))
+    print ("Significance level is: " + str(significance_level))
+    print ("Critical value is: " +str(critical_value))
+    print ("Running two sided z-score lookup? -->" + str(two_sided))
+    print ("")
+    print ("Result is: " + result)
+    print (".....................................")
+
+    return result
+
+##############################
+### Method to handle tests ###
+##############################
+def run_tests(num_observations):
+    input_file = "lgc_output.txt"
+    test_name = "LINEAR CONGRUENTIAL GENERATOR"
+
+    # Perform kolmogorov_smirnov_test
+    print("---------KS_TEST-----------")
+    first_100_values = collect_first_100_samples_in_data_set(input_file)
+    first_100_values.sort()
+    ks_result = kolmogorov_smirnov_test(first_100_values,1,100)
+    ks_significance_test(ks_result,100, 0.1)
+    ks_significance_test(ks_result,100, 0.05)
+    ks_significance_test(ks_result,100, 0.01)
+    print ("Kolmogorov-Smirnov Test Result for D-Value: " + str(ks_result))
+    print ("")
+
+    # Perform runs_test_for_independence
+    # perform a runs test
+    print ("---------RUNS_TEST-----------")
+    runs_test_result = runs_test_for_independence( input_file, num_observations )
+    print ("Runs Test Result Z-Score: " + str(runs_test_result))
+    print ("")
+    z_score_lookup(runs_test_result, 0.8, two_sided=True)
+    z_score_lookup(runs_test_result, 0.9, two_sided=True)
+    z_score_lookup(runs_test_result, 0.95, two_sided=True)
+    print ("")
 
 if __name__ == "__main__":
     main()
