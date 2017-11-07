@@ -6,7 +6,7 @@ from itertools import islice
 ### Source: https://tonypoer.io/2016/03/23/experimenting-with-linear-congruential-generators-in-python/ ###
 ###########################################################################################################
 def main():
-    num_observations = 100
+    num_observations = 10000
     print("Random Number Generation using LCG")
     generate_lcg(num_observations)
     generate_lcg_randu(num_observations)
@@ -361,6 +361,10 @@ def z_score_lookup( z_score, significance_level, two_sided=True):
 ### Method to handle tests ###
 ##############################
 def run_tests(num_observations):
+    """
+    Run the Kolmogorov Smirnov and Runs tests.
+    """
+
     input_file = "lgc_output.txt"
     test_name = "LINEAR CONGRUENTIAL GENERATOR"
 
