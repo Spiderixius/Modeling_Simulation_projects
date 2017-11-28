@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tpn-editor>
+  <tpn-entities>
+    <place uuid="09575474-51a2-4216-a3f1-67a25115a196" x="-100" y="244">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="CPU is waiting" satellite-x="-103" satellite-y="272"/>
+        <property id="default.marking" marking="1"/>
+      </properties>
+    </place>
+    <place uuid="1577d8d6-3326-4ead-a091-1597e08a22f8" x="137" y="252">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="CPU Read RAM" satellite-x="134" satellite-y="279"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="47e65162-cefe-4ae1-9a22-ccbbf9397491" x="550" y="180">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="CPU to Memory" satellite-x="552" satellite-y="207"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="4b27ec24-d2e0-48a1-8aee-fa759b8ad314" x="6" y="248">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="CPU request" satellite-x="-16" satellite-y="270"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="7a287665-1efe-4055-898a-0a754e5f09bf" x="382" y="56">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="Get Bus" satellite-x="381" satellite-y="83"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="7b7334e7-d106-454b-b35a-248506c4ab04" x="86" y="56">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="DMA request" satellite-x="85" satellite-y="84"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="bc7bed9b-3e8f-4456-82bd-d2e806c8c62e" x="382" y="131">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="DMA to Memory" satellite-x="384" satellite-y="159"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="d0437e8c-72cb-40be-8d4a-ae6f83ca3e60" x="263" y="309">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="Bus is busy" satellite-x="264" satellite-y="336"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="d465b5df-ed35-4a8e-a188-d1266aca0abb" x="274" y="212">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="Bus is free" satellite-x="272" satellite-y="239"/>
+        <property id="default.marking" marking="1"/>
+      </properties>
+    </place>
+    <place uuid="efe59cb3-da45-4e9d-855e-a54caec46606" x="-100" y="56">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="DMA is waiting" satellite-x="-101" satellite-y="85"/>
+        <property id="default.marking" marking="1"/>
+      </properties>
+    </place>
+    <transition rotation-angle="0.0" uuid="71235017-dfec-418c-81c9-6f445c02dbd1" x="-17" y="56">
+      <features>
+        <feature id="transition.stochastic"/>
+      </features>
+      <properties>
+        <property id="0.default.name" name="t0" satellite-x="1" satellite-y="68"/>
+        <property enabling-function="" id="10.default.enablingFunction"/>
+        <property id="11.default.markingUpdate" marking-update=""/>
+        <property id="12.default.resetTransitions" reset-transitions=""/>
+        <property id="transition.stochastic" lambda="1" property-data-type="3.type.exponential" satellite-x="-17" satellite-y="86"/>
+      </properties>
+    </transition>
+    <transition rotation-angle="0.0" uuid="7dd03733-6618-4eec-9322-1a9521cd84d2" x="189" y="56">
+      <features>
+        <feature id="transition.stochastic"/>
+      </features>
+      <properties>
+        <property id="0.default.name" name="t1" satellite-x="207" satellite-y="68"/>
+        <property enabling-function="" id="10.default.enablingFunction"/>
+        <property id="11.default.markingUpdate" marking-update=""/>
+        <property id="12.default.resetTransitions" reset-transitions=""/>
+        <property id="transition.stochastic" lambda="1" property-data-type="3.type.exponential" satellite-x="189" satellite-y="86"/>
+      </properties>
+    </transition>
+    <arc from="efe59cb3-da45-4e9d-855e-a54caec46606" to="71235017-dfec-418c-81c9-6f445c02dbd1" uuid="0bfe57b6-1e8d-4b44-92d0-f41b9703469a">
+      <features/>
+      <properties/>
+    </arc>
+  </tpn-entities>
+</tpn-editor>

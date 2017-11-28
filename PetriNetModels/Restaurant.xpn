@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tpn-editor>
+  <tpn-entities>
+    <place uuid="69f463c2-0d39-423a-9479-75c9cdfea064" x="179" y="331">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="Queue" satellite-x="180" satellite-y="304"/>
+        <property id="default.marking" marking="0"/>
+      </properties>
+    </place>
+    <place uuid="ed4052bd-0637-467b-a06f-9887420abb60" x="295" y="196">
+      <features/>
+      <properties>
+        <property id="0.default.name" name="Waiters" satellite-x="295" satellite-y="168"/>
+        <property id="default.marking" marking="3"/>
+      </properties>
+    </place>
+    <transition rotation-angle="0.0" uuid="101d66a9-7786-464c-93c4-3f49936b3b06" x="176" y="454">
+      <features>
+        <feature id="transition.stochastic"/>
+      </features>
+      <properties>
+        <property id="0.default.name" name="people leave because waiting for too long" satellite-x="190" satellite-y="502"/>
+        <property enabling-function="" id="10.default.enablingFunction"/>
+        <property id="11.default.markingUpdate" marking-update=""/>
+        <property id="12.default.resetTransitions" reset-transitions=""/>
+        <property id="transition.stochastic" lambda="1" property-data-type="3.type.exponential" satellite-x="176" satellite-y="484"/>
+      </properties>
+    </transition>
+    <transition rotation-angle="0.0" uuid="4239565f-55f4-4eac-a92b-64e7929d54d1" x="76" y="331">
+      <features>
+        <feature id="transition.stochastic"/>
+      </features>
+      <properties>
+        <property id="0.default.name" name="people arrive" satellite-x="78" satellite-y="305"/>
+        <property enabling-function="" id="10.default.enablingFunction"/>
+        <property id="11.default.markingUpdate" marking-update=""/>
+        <property id="12.default.resetTransitions" reset-transitions=""/>
+        <property id="transition.stochastic" lambda="1" property-data-type="3.type.exponential" satellite-x="76" satellite-y="361"/>
+      </properties>
+    </transition>
+    <transition rotation-angle="0.0" uuid="9bad0780-7008-4cf7-b160-89b40819590a" x="295" y="331">
+      <features>
+        <feature id="transition.stochastic"/>
+      </features>
+      <properties>
+        <property id="0.default.name" name="call for waiter" satellite-x="299" satellite-y="358"/>
+        <property enabling-function="" id="10.default.enablingFunction"/>
+        <property id="11.default.markingUpdate" marking-update=""/>
+        <property id="12.default.resetTransitions" reset-transitions=""/>
+        <property id="transition.stochastic" priority="0" property-data-type="0.type.immediate" satellite-x="295" satellite-y="361" weight="1"/>
+      </properties>
+    </transition>
+    <arc from="ed4052bd-0637-467b-a06f-9887420abb60" to="9bad0780-7008-4cf7-b160-89b40819590a" uuid="696691b0-dd4d-44ef-a104-955a3c3f40e2">
+      <features/>
+      <properties/>
+    </arc>
+    <arc from="69f463c2-0d39-423a-9479-75c9cdfea064" to="9bad0780-7008-4cf7-b160-89b40819590a" uuid="6f3834f0-a8b1-419e-bc41-241a4612bac7">
+      <features/>
+      <properties/>
+    </arc>
+    <arc from="69f463c2-0d39-423a-9479-75c9cdfea064" to="101d66a9-7786-464c-93c4-3f49936b3b06" uuid="8341de41-9bbb-4c28-8ef7-8b1beb68ca50">
+      <features/>
+      <properties/>
+    </arc>
+    <arc from="4239565f-55f4-4eac-a92b-64e7929d54d1" to="69f463c2-0d39-423a-9479-75c9cdfea064" uuid="c426f972-f00c-48a3-82e1-1c3744f41ac2">
+      <features/>
+      <properties/>
+    </arc>
+  </tpn-entities>
+</tpn-editor>
